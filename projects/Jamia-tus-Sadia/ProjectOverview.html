@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Overview — JAMIA-TUS-SADIA</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand-1: #0d6efd;
+      --muted: #6c757d;
+    }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f8f9fa;
+      color: #212529;
+    }
+    header.site-header {
+      background: linear-gradient(90deg, #0b5ed7 0%, var(--brand-1) 100%);
+      color: #fff;
+      padding: 2rem 0;
+    }
+    header.site-header h1 { margin: 0; font-weight: 700; letter-spacing: .4px; }
+    header.site-header p { margin: 0; opacity: .95; }
+
+    .lead-small { font-size: .98rem; color: var(--muted); }
+
+    .card-pre {
+      background: #0b5ed71a;
+      border: 1px dashed #0b5ed7;
+    }
+
+    .tree ul { list-style: none; padding-left: 1rem; margin: 0; }
+    .tree li { margin: .35rem 0; line-height: 1.4; }
+    .tree .caret { cursor: pointer; user-select: none; color: var(--brand-1); font-weight: 600; display: inline-flex; gap:.5rem; align-items:center; }
+    .tree .file { padding-left: 1.6rem; position: relative; color: #495057; }
+    .tree .file::before { content: "📄"; position: absolute; left: 0; }
+    .tree .folder::before { content: "📂"; margin-right: .5rem; }
+    .nested { display: none; }
+    .nested.show { display: block; }
+
+    .muted-small { font-size: .95rem; color: var(--muted); }
+
+    /* Language toggle */
+    .lang-toggle .btn { min-width: 56px; }
+
+    /* small helpers */
+    .kbd { font-size: .85rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header text-center">
+    <div class="container">
+      <h1 data-en="JAMIA-TUS-SADIA" data-bn="জামিয়া-তুস-সাদিয়া">JAMIA-TUS-SADIA</h1>
+      <p class="lead" data-en="A Project of Fakhrul Islam" data-bn="ফখরুল ইসলামের একটি প্রকল্প">A Project of Fakhrul Islam</p>
+    </div>
+  </header>
+
+  <!-- Bootstrap Navbar with Language Toggle -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="me-2">📚</span>
+        <span data-en="JAMIA-TUS-SADIA" data-bn="জামিয়া-তুস-সাদিয়া">JAMIA-TUS-SADIA</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-en="Home" data-bn="হোম">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="ProjectOverview.html" data-en="Project Overview" data-bn="প্রকল্পের সারসংক্ষেপ">Project Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="public/home.html" data-en="Public Site" data-bn="পাবলিক সাইট">Public Site</a></li>
+          <li class="nav-item"><a class="nav-link" href="docs/roadmap.md" data-en="Roadmap" data-bn="রোডম্যাপ">Roadmap</a></li>
+          <li class="nav-item"><a class="nav-link" href="ProjectOverview.html#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a></li>
+
+          <li class="nav-item ms-3">
+            <div class="btn-group lang-toggle" role="group" aria-label="Language toggle">
+              <button id="btn-en" type="button" class="btn btn-outline-light btn-sm" aria-pressed="true">EN</button>
+              <button id="btn-bn" type="button" class="btn btn-outline-light btn-sm">BN</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="container my-5">
+
+    <!-- Hero / Summary -->
+    <section class="mb-4">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-8">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h2 data-en="Project Overview" data-bn="প্রকল্পের সারসংক্ষেপ">Project Overview</h2>
+              <p class="lead-small mb-2" data-en="JAMIA-TUS-SADIA is an organized web project for an international madrasha. The repository separates public pages, role-based pages, authentication, assets, scripts, data, and documentation to support modular development and easy maintenance."
+                 data-bn="জামিয়া-তুস-সাদিয়া একটি আন্তর্জাতিক মাদ্রাসার জন্য সংগঠিত ওয়েব প্রকল্প। রেপোজিটরিটি পাবলিক পেজ, রোল-ভিত্তিক পেজ, অথেনটিকেশন, অ্যাসেট, স্ক্রিপ্ট, ডেটা এবং ডকুমেন্টেশন আলাদা করে মডুলার ডেভেলপমেন্ট এবং সহজ রক্ষণাবেক্ষণ নিশ্চিত করে।">
+                JAMIA-TUS-SADIA is an organized web project for an international madrasha. The repository separates public pages, role-based pages, authentication, assets, scripts, data, and documentation to support modular development and easy maintenance.
+              </p>
+              <p class="mb-0" data-en="<strong>Primary goals:</strong> clear structure, responsive UI, role-based pages, simple auth flows, and maintainable assets."
+                 data-bn="<strong>প্রধান লক্ষ্য:</strong> পরিষ্কার কাঠামো, রেসপনসিভ UI, রোল-ভিত্তিক পেজ, সহজ অথেনটিকেশন ফ্লো এবং রক্ষণাবেক্ষণযোগ্য অ্যাসেট।">
+                <strong>Primary goals:</strong> clear structure, responsive UI, role-based pages, simple auth flows, and maintainable assets.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card card-pre shadow-sm">
+            <div class="card-body">
+              <h5 class="mb-2" data-en="Quick Facts" data-bn="দ্রুত তথ্য">Quick Facts</h5>
+              <ul class="list-unstyled mb-0">
+                <li><strong data-en="Owner:" data-bn="মালিক:">Owner:</strong> <span data-en="Fakhrul Islam" data-bn="ফখরুল ইসলাম">Fakhrul Islam</span></li>
+                <li><strong data-en="Start:" data-bn="শুরু:">Start:</strong> <span data-en="Q1 2026" data-bn="Q1 2026">Q1 2026</span></li>
+                <li><strong data-en="Stack:" data-bn="স্ট্যাক:">Stack:</strong> <span data-en="HTML, CSS (Bootstrap), JS" data-bn="HTML, CSS (Bootstrap), JS">HTML, CSS (Bootstrap), JS</span></li>
+                <li><strong data-en="Structure:" data-bn="কাঠামো:">Structure:</strong> <span data-en="modular folders" data-bn="মডুলার ফোল্ডার">modular folders</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope & Features -->
+    <section class="mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 data-en="Scope & Features" data-bn="পরিধি ও বৈশিষ্ট্য">Scope & Features</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <h5 data-en="Core Features" data-bn="কোর বৈশিষ্ট্য">Core Features</h5>
+              <ul>
+                <li data-en="Public pages: home, about, admission, gallery, contact" data-bn="পাবলিক পেজ: হোম, অ্যাবাউট, ভর্তি, গ্যালারি, যোগাযোগ">Public pages: home, about, admission, gallery, contact</li>
+                <li data-en="Role pages: admin, teacher, student, parent" data-bn="রোল পেজ: অ্যাডমিন, শিক্ষক, ছাত্র, অভিভাবক">Role pages: admin, teacher, student, parent</li>
+                <li data-en="Authentication stubs: login, register, password" data-bn="অথেনটিকেশন: লগইন, রেজিস্টার, পাসওয়ার্ড">Authentication stubs: login, register, password</li>
+                <li data-en="Assets management: CSS, images, fonts" data-bn="অ্যাসেট ম্যানেজমেন্ট: CSS, ইমেজ, ফন্ট">Assets management: CSS, images, fonts</li>
+                <li data-en="Client-side utilities: app.js, ui.js, dashboard.js" data-bn="ক্লায়েন্ট-সাইড ইউটিলিটি: app.js, ui.js, dashboard.js">Client-side utilities: app.js, ui.js, dashboard.js</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5 data-en="Non-functional Goals" data-bn="নন-ফাংশনাল লক্ষ্য">Non-functional Goals</h5>
+              <ul>
+                <li data-en="Responsive layout using Bootstrap" data-bn="Bootstrap ব্যবহার করে রেসপনসিভ লেআউট">Responsive layout using Bootstrap</li>
+                <li data-en="Accessible markup and semantic HTML" data-bn="অ্যাক্সেসিবল মার্কআপ ও সেমান্টিক HTML">Accessible markup and semantic HTML</li>
+                <li data-en="Simple, maintainable folder layout" data-bn="সরল, রক্ষণাবেক্ষণযোগ্য ফোল্ডার লেআউট">Simple, maintainable folder layout</li>
+                <li data-en="Progressive enhancement for interactivity" data-bn="ইন্টারঅ্যাকটিভিটির জন্য প্রগ্রেসিভ এনহ্যান্সমেন্ট">Progressive enhancement for interactivity</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Folder Tree (collapsible) -->
+    <section class="mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 data-en="Folder Tree Structure" data-bn="ফোল্ডার ট্রি স্ট্রাকচার">Folder Tree Structure</h3>
+          <p class="muted-small" data-en="Click folder names to expand or collapse. This mirrors the repository layout." data-bn="ফোল্ডার নাম ক্লিক করে এক্সপ্যান্ড বা কোল্যাপ্স করুন। এটি রেপোজিটরির কাঠামোকে প্রতিফলিত করে।">
+            Click folder names to expand or collapse. This mirrors the repository layout.
+          </p>
+
+          <div class="tree mt-3">
+            <ul>
+              <li class="folder">
+                <span class="caret" data-path="root" role="button" tabindex="0">JAMIA-TUS-SADIA</span>
+                <ul class="nested show">
+                  <li class="file">index.html</li>
+                  <li class="file">ProjectOverview.html</li>
+
+                  <li class="folder"><span class="caret" role="button" tabindex="0">public</span>
+                    <ul class="nested">
+                      <li class="file">home.html</li>
+                      <li class="file">about.html</li>
+                      <li class="file">admission.html</li>
+                      <li class="file">gallery.html</li>
+                      <li class="file">contact.html</li>
+                    </ul>
+                  </li>
+
+                  <li class="folder"><span class="caret" role="button" tabindex="0">roles</span>
+                    <ul class="nested">
+                      <li class="file">admin.html</li>
+                      <li class="file">teacher.html</li>
+                      <li class="file">student.html</li>
+                      <li class="file">parent.html</li>
+                    </ul>
+                  </li>
+
+                  <li class="folder"><span class="caret" role="button" tabindex="0">auth</span>
+                    <ul class="nested">
+                      <li class="file">login.html</li>
+                      <li class="file">register.html</li>
+                      <li class="file">password.html</li>
+                    </ul>
+                  </li>
+
+                  <li class="folder"><span class="caret" role="button" tabindex="0">assets</span>
+                    <ul class="nested">
+                      <li class="folder"><span class="caret" role="button" tabindex="0">css</span>
+                        <ul class="nested">
+                          <li class="file">bootstrap.min.css</li>
+                          <li class="file">style.css</li>
+                        </ul>
+                      </li>
+                      <li class="folder"><span class="caret" role="button" tabindex="0">images</span>
+                        <ul class="nested">
+                          <li class="file">logo.png</li>
+                          <li class="file">banner.jpg</li>
+                        </ul>
+                      </li>
+                      <li class="folder">fonts</li>
+                    </ul>
+                  </li>
+
+                  <li class="folder"><span class="caret" role="button" tabindex="0">scripts</span>
+                    <ul class="nested">
+                      <li class="file">app.js</li>
+                      <li class="file">auth.js</li>
+                      <li class="file">ui.js</li>
+                      <li class="file">dashboard.js</li>
+                    </ul>
+                  </li>
+
+                  <li class="folder"><span class="caret" role="button" tabindex="0">data</span>
+                    <ul class="nested">
+                      <li class="file">master.json</li>
+                    </ul>
+                  </li>
+
+                  <li class="folder"><span class="caret" role="button" tabindex="0">docs</span>
+                    <ul class="nested">
+                      <li class="file">requirements.md</li>
+                      <li class="file">roadmap.md</li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 data-en="Timeline & Milestones" data-bn="টাইমলাইন ও মাইলস্টোন">Timeline & Milestones</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <h6 data-en="Phase 1 — Setup" data-bn="ফেজ ১ — সেটআপ">Phase 1 — Setup</h6>
+              <p class="muted-small" data-en="Repository scaffolding, initial pages, and basic styling. (Estimated 2 weeks)" data-bn="রেপোজিটরি স্ক্যাফোল্ডিং, প্রাথমিক পেজ এবং বেসিক স্টাইলিং। (প্রায় ২ সপ্তাহ)">Repository scaffolding, initial pages, and basic styling. (Estimated 2 weeks)</p>
+            </div>
+            <div class="col-md-6">
+              <h6 data-en="Phase 2 — Development" data-bn="ফেজ ২ — ডেভেলপমেন্ট">Phase 2 — Development</h6>
+              <p class="muted-small" data-en="Role pages, authentication flows, and core scripts. (Estimated 4–6 weeks)" data-bn="রোল পেজ, অথেনটিকেশন ফ্লো এবং কোর স্ক্রিপ্ট। (প্রায় ৪–৬ সপ্তাহ)">Role pages, authentication flows, and core scripts. (Estimated 4–6 weeks)</p>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <h6 data-en="Phase 3 — Testing" data-bn="ফেজ ৩ — টেস্টিং">Phase 3 — Testing</h6>
+              <p class="muted-small" data-en="Unit tests, cross-browser checks, and accessibility fixes. (Estimated 2 weeks)" data-bn="ইউনিট টেস্ট, ক্রস-ব্রাউজার চেক এবং অ্যাক্সেসিবিলিটি ফিক্স। (প্রায় ২ সপ্তাহ)">Unit tests, cross-browser checks, and accessibility fixes. (Estimated 2 weeks)</p>
+            </div>
+            <div class="col-md-6">
+              <h6 data-en="Phase 4 — Deployment & Docs" data-bn="ফেজ ৪ — ডিপ্লয়মেন্ট ও ডকস">Phase 4 — Deployment & Docs</h6>
+              <p class="muted-small" data-en="Deploy to hosting, finalize docs and roadmap. (Estimated 1 week)" data-bn="হোস্টিং-এ ডিপ্লয়, ডকস ও রোডম্যাপ চূড়ান্ত করা। (প্রায় ১ সপ্তাহ)">Deploy to hosting, finalize docs and roadmap. (Estimated 1 week)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contributors & Contact -->
+    <section id="contact" class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 data-en="Contributors & Contact" data-bn="অবদানকারী ও যোগাযোগ">Contributors & Contact</h3>
+          <p class="muted-small" data-en="Primary author: Fakhrul Islam" data-bn="প্রধান লেখক: ফখরুল ইসলাম">Primary author: <strong>Fakhrul Islam</strong></p>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h6 data-en="Contributors" data-bn="অবদানকারী">Contributors</h6>
+              <ul>
+                <li data-en="Fakhrul Islam — Project lead" data-bn="ফখরুল ইসলাম — প্রকল্প লিড">Fakhrul Islam — Project lead</li>
+                <li data-en="Sadia Jannat — Assistent Project lead" data-bn="ফখরুল ইসলাম — প্রকল্প লিড">Fakhrul Islam — Project lead</li>
+                <li data-en="MJ-AHMAD — Design & review" data-bn="MJ-AHMAD — ডিজাইন ও রিভিউ">MJ-AHMAD — Design & review</li>
+                <li data-en="Community contributors — future additions" data-bn="কমিউনিটি অবদানকারী — ভবিষ্যৎ সংযোজন">Community contributors — future additions</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h6 data-en="Contact" data-bn="যোগাযোগ">Contact</h6>
+              <p class="muted-small mb-1" data-en="For questions, suggestions, or contributions:" data-bn="প্রশ্ন, পরামর্শ বা অবদানের জন্য:">For questions, suggestions, or contributions:</p>
+              <p class="mb-0"><a href="mailto:contact@example.com">contact@example.com</a></p>
+              <p class="mt-2 mb-0" data-en="Project page:" data-bn="প্রকল্প পেজ:">Project page: <a href="index.html">index.html</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-1" data-en="&copy; 2026 JAMIA-TUS-SADIA INTERNATIONAL MADRASHA. All rights reserved." data-bn="&copy; 2026 জামিয়া-তুস-সাদিয়া ইন্টারন্যাশনাল মাদ্রাসা। সর্বস্বত্ব সংরক্ষিত।">
+      &copy; 2026 JAMIA-TUS-SADIA INTERNATIONAL MADRASHA. All rights reserved.
+    </p>
+    <hr class="border-light w-25 mx-auto my-2">
+    <p class="mb-1" data-en="With a Vision for Tomorrow's Leaders">
+      "With a Vision for Tomorrow's Leaders"
+    </p>
+    <p class="mt-2">
+      <span data-en="By" data-bn="দ্বারা">By</span>
+      <a href="https://MJ-Ahmad.github.io/mj-ahmad/" target="_blank" class="text-info fw-bold">MJ-AHMAD</a>
+    </p>
+  </footer>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Language handling: EN / BN
+    const LANG_KEY = 'jamia_lang';
+    const btnEn = document.getElementById('btn-en');
+    const btnBn = document.getElementById('btn-bn');
+
+    function setLanguage(lang) {
+      // update html lang attribute
+      document.documentElement.lang = (lang === 'bn') ? 'bn' : 'en';
+      // find all elements with data-en / data-bn
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const en = el.getAttribute('data-en');
+        const bn = el.getAttribute('data-bn') || en;
+        if (lang === 'bn') {
+          // preserve inner HTML tags if present in data attributes
+          el.innerHTML = bn;
+        } else {
+          el.innerHTML = en;
+        }
+      });
+
+      // update active state of buttons
+      if (lang === 'bn') {
+        btnBn.classList.remove('btn-outline-light'); btnBn.classList.add('btn-light', 'text-dark');
+        btnEn.classList.remove('btn-light', 'text-dark'); btnEn.classList.add('btn-outline-light');
+      } else {
+        btnEn.classList.remove('btn-outline-light'); btnEn.classList.add('btn-light', 'text-dark');
+        btnBn.classList.remove('btn-light', 'text-dark'); btnBn.classList.add('btn-outline-light');
+      }
+
+      // persist
+      try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* ignore */ }
+    }
+
+    // Initialize language from localStorage or default to English
+    document.addEventListener('DOMContentLoaded', function () {
+      const saved = (localStorage.getItem(LANG_KEY) === 'bn') ? 'bn' : 'en';
+      setLanguage(saved);
+
+      // Folder tree toggles
+      document.querySelectorAll('.tree .caret').forEach(caret => {
+        caret.addEventListener('click', function (e) {
+          const parent = this.parentElement;
+          const nested = parent.querySelector('.nested');
+          if (!nested) return;
+          nested.classList.toggle('show');
+          this.classList.toggle('caret-down');
+        });
+        // keyboard accessibility
+        caret.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+
+      // Expand root by default
+      document.querySelectorAll('.tree > ul > li > .nested').forEach(n => n.classList.add('show'));
+    });
+
+    // Button events
+    btnEn.addEventListener('click', () => setLanguage('en'));
+    btnBn.addEventListener('click', () => setLanguage('bn'));
+
+    // Utility: highlight a file name in the tree (example)
+    function highlightFile(filename) {
+      document.querySelectorAll('.tree .file').forEach(el => {
+        el.style.background = '';
+      });
+      const node = Array.from(document.querySelectorAll('.tree .file')).find(el => el.textContent.trim() === filename);
+      if (node) {
+        node.style.background = '#fff3cd';
+        node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Expose highlightFile for console/testing
+    window.highlightFile = highlightFile;
+  </script>
+</body>
+</html>

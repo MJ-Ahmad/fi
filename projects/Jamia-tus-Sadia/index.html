@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JAMIA-TUS-SADIA Project</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-dark:#0d6efd;
+    }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f8f9fa;
+      color: #212529;
+    }
+
+    header.site-header {
+      background: linear-gradient(90deg, #0b5ed7 0%, #0d6efd 100%);
+      color: #fff;
+      padding: 2rem 0;
+    }
+    header.site-header h1 { margin: 0; font-weight: 700; letter-spacing: .4px; }
+    header.site-header p { margin: 0; opacity: .92; }
+
+    /* Section spacing */
+    main > .section {
+      padding: 3rem 0;
+    }
+
+    /* Folder tree */
+    .tree ul {
+      list-style: none;
+      padding-left: 1rem;
+      margin: 0;
+    }
+    .tree li {
+      margin: .35rem 0;
+      line-height: 1.4;
+    }
+    .tree li .caret {
+      user-select: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: #0b5ed7;
+      font-weight: 600;
+    }
+    .tree li.file {
+      color: #495057;
+      font-weight: 500;
+      padding-left: 1.6rem;
+      position: relative;
+    }
+    .tree li.file::before {
+      content: "📄";
+      position: absolute;
+      left: 0;
+    }
+    .tree li.folder::before {
+      content: "📂";
+      margin-right: .5rem;
+    }
+    .nested { display: none; }
+    .active-nested { display: block; }
+
+    /* Small helper */
+    .muted-small { font-size: .95rem; color: #6c757d; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header text-center">
+    <div class="container">
+      <h1>JAMIA-TUS-SADIA</h1>
+      <p class="lead">A Project of <strong>Fakhrul Islam</strong></p>
+    </div>
+  </header>
+
+  <!-- Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span class="me-2">📚</span>
+        <span>JAMIA-TUS-SADIA</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#overview" data-target="overview" onclick="showSection(event, 'overview')">Project Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tree" data-target="tree" onclick="showSection(event, 'tree')">Folder Tree Structure</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#timeline" data-target="timeline" onclick="showSection(event, 'timeline')">Timeline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#etc" data-target="etc" onclick="showSection(event, 'etc')">Additional</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ProjectOverview.html" target="_self">Project Page</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Project Overview -->
+    <section id="overview" class="section bg-white rounded shadow-sm mb-4">
+      <div class="p-4">
+        <h2>Project Overview</h2>
+        <p class="muted-small">JAMIA-TUS-SADIA is an international madrasha web project organized for modular development and clear documentation. The repository is structured to separate public pages, role-based pages, authentication, assets, scripts, data, and documentation.</p>
+
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#" onclick="showSection(event,'tree')">Folder Tree Structure</a></li>
+              <li><a href="#" onclick="showSection(event,'timeline')">Timeline</a></li>
+              <li><a href="#" onclick="showSection(event,'etc')">More Info</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5>Project Summary</h5>
+            <p class="muted-small">This project uses a simple static site layout with progressive enhancement: Bootstrap for layout and responsiveness, modular folders for separation of concerns, and small JavaScript utilities for interactivity (navigation, collapsible folder tree, auth stubs).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Folder Tree Structure -->
+    <section id="tree" class="section bg-white rounded shadow-sm mb-4">
+      <div class="p-4">
+        <h2>Folder Tree Structure</h2>
+        <p class="muted-small">Click folders to expand/collapse the structure.</p>
+
+        <div class="tree mt-3">
+          <ul>
+            <li class="folder"><span class="caret" data-toggle="caret">JAMIA-TUS-SADIA</span>
+              <ul class="nested active-nested">
+                <li class="file">index.html</li>
+                <li class="file">ProjectOverview.html</li>
+
+                <li class="folder"><span class="caret" data-toggle="caret">public</span>
+                  <ul class="nested">
+                    <li class="file">home.html</li>
+                    <li class="file">about.html</li>
+                    <li class="file">admission.html</li>
+                    <li class="file">gallery.html</li>
+                    <li class="file">contact.html</li>
+                  </ul>
+                </li>
+
+                <li class="folder"><span class="caret" data-toggle="caret">roles</span>
+                  <ul class="nested">
+                    <li class="file">admin.html</li>
+                    <li class="file">teacher.html</li>
+                    <li class="file">student.html</li>
+                    <li class="file">parent.html</li>
+                  </ul>
+                </li>
+
+                <li class="folder"><span class="caret" data-toggle="caret">auth</span>
+                  <ul class="nested">
+                    <li class="file">login.html</li>
+                    <li class="file">register.html</li>
+                    <li class="file">password.html</li>
+                  </ul>
+                </li>
+
+                <li class="folder"><span class="caret" data-toggle="caret">assets</span>
+                  <ul class="nested">
+                    <li class="folder"><span class="caret" data-toggle="caret">css</span>
+                      <ul class="nested">
+                        <li class="file">bootstrap.min.css</li>
+                        <li class="file">style.css</li>
+                      </ul>
+                    </li>
+                    <li class="folder"><span class="caret" data-toggle="caret">images</span>
+                      <ul class="nested">
+                        <li class="file">logo.png</li>
+                        <li class="file">banner.jpg</li>
+                      </ul>
+                    </li>
+                    <li class="folder">fonts</li>
+                  </ul>
+                </li>
+
+                <li class="folder"><span class="caret" data-toggle="caret">scripts</span>
+                  <ul class="nested">
+                    <li class="file">app.js</li>
+                    <li class="file">auth.js</li>
+                    <li class="file">ui.js</li>
+                    <li class="file">dashboard.js</li>
+                  </ul>
+                </li>
+
+                <li class="folder"><span class="caret" data-toggle="caret">data</span>
+                  <ul class="nested">
+                    <li class="file">master.json</li>
+                  </ul>
+                </li>
+
+                <li class="folder"><span class="caret" data-toggle="caret">docs</span>
+                  <ul class="nested">
+                    <li class="file">requirements.md</li>
+                    <li class="file">roadmap.md</li>
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" class="section bg-white rounded shadow-sm mb-4">
+      <div class="p-4">
+        <h2>Timeline</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Phase 1 — Setup</h5>
+            <p class="muted-small">Repository scaffolding, initial pages, and basic styling.</p>
+          </div>
+          <div class="col-md-6">
+            <h5>Phase 2 — Development</h5>
+            <p class="muted-small">Implement role pages, authentication flows, and core scripts.</p>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <h5>Phase 3 — Testing</h5>
+            <p class="muted-small">Unit tests, cross-browser checks, and accessibility fixes.</p>
+          </div>
+          <div class="col-md-6">
+            <h5>Phase 4 — Deployment & Docs</h5>
+            <p class="muted-small">Deploy to hosting, finalize docs and roadmap.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional -->
+    <section id="etc" class="section bg-white rounded shadow-sm mb-4">
+      <div class="p-4">
+        <h2>Additional Information</h2>
+        <p class="muted-small">Use this area for notes, links to external resources, contributor list, or future feature ideas.</p>
+
+        <div class="mt-3">
+          <button class="btn btn-outline-primary me-2" onclick="openProjectOverview()">Open Project Overview Page</button>
+          <button class="btn btn-outline-secondary" onclick="downloadStructure()">Download Structure (stub)</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-1">&copy; 2026 JAMIA-TUS-SADIA INTERNATIONAL MADRASHA. All rights reserved.</p>
+    <hr class="border-light w-25 mx-auto my-2">
+    <p class="mb-1">
+      "With a Vision for Tomorrow's Leaders"
+    </p>
+    <p class="mt-2">
+      By <a href="https://MJ-Ahmad.github.io/mj-ahmad/" target="_blank" class="text-info fw-bold">MJ-AHMAD</a>
+    </p>
+  </footer>
+
+  <!-- Bootstrap JS (Popper + Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Navigation: show/hide sections and update active nav link
+    function showSection(event, id) {
+      if (event) event.preventDefault();
+
+      // hide all sections
+      document.querySelectorAll('main section').forEach(s => s.classList.remove('d-block'));
+      // show target
+      const target = document.getElementById(id);
+      if (target) target.classList.add('d-block');
+
+      // update navbar active state
+      document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.target === id) link.classList.add('active');
+      });
+
+      // scroll into view smoothly
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Initialize: show overview by default
+    document.addEventListener('DOMContentLoaded', function () {
+      // ensure only overview visible initially
+      document.querySelectorAll('main section').forEach(s => s.classList.remove('d-block'));
+      const overview = document.getElementById('overview');
+      if (overview) overview.classList.add('d-block');
+
+      // Folder tree toggles
+      document.querySelectorAll('.tree .caret').forEach(caret => {
+        caret.addEventListener('click', function (e) {
+          const parentLi = this.parentElement;
+          const nested = parentLi.querySelector('.nested');
+          if (!nested) return;
+          nested.classList.toggle('active-nested');
+          this.classList.toggle('caret-down');
+        });
+      });
+
+      // Expand root by default
+      document.querySelectorAll('.tree > ul > li > .nested').forEach(n => n.classList.add('active-nested'));
+    });
+
+    // Example helper functions (stubs)
+    function openProjectOverview() {
+      // navigate to ProjectOverview.html if exists
+      window.location.href = 'ProjectOverview.html';
+    }
+    function downloadStructure() {
+      // placeholder: in a real app you'd generate a file or trigger a download
+      alert('Download stub: implement server-side export or client-side generation.');
+    }
+  </script>
+</body>
+</html>
